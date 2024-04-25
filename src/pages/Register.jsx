@@ -2,6 +2,8 @@ import signUp from "../assets/Painting .webp";
 
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 const Register = () => {
   const { createUser } = useAuth();
   const handleRegister = (e) => {
@@ -12,20 +14,26 @@ const Register = () => {
     const password = form.password.value;
     const image = form.image.value;
     console.log(name, email, password, image);
-    createUser( email, password)
+    if (password.length < 6) {
+      return toast.error("Password should be at least 6 characters");
+    }
+    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)) {
+      return toast.error("First Characters uppercase and Lowercase Will be ");
+    }
+    createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          title: "Success",
+          text: "Registration Successfully",
+          icon: "success",
+        });
+        form.reset();
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Email-already-in-use");
       });
-    // createUser(email,password)
-    // .then(result =>{
-    //     console.log(result.user)
-    // })
-    // .catch(error =>{
-    //     console.log(error)
-    // })
   };
   return (
     <div className=" flex flex-col md:flex lg:flex-row space-x-10 mt-10 max-w-[1300px] mx-auto">
@@ -130,6 +138,7 @@ const Register = () => {
           <button className="bg-[#4F1B82] px-3 py-2 rounded-lg text-xl font-serif text-white font-semibold my-6">
             Sign Up
           </button>
+          <Toaster />
         </form>
 
         <p className="text-center text-xl font-serif my-2">
