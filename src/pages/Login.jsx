@@ -1,6 +1,6 @@
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import signIn from "../assets/art.avif";
 import useAuth from "../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
@@ -9,6 +9,9 @@ import { useState } from "react";
 const Login = () => {
   const { userSignIn, signInGoogle, githubLogin } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const navigate =useNavigate()
+  const location =useLocation()
+  const from = location ?.state || '/'
   // sign in
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -24,6 +27,7 @@ const Login = () => {
           text: "Login Successfully",
           icon: "success",
         });
+        navigate(from)
         form.reset();
       })
       .catch((error) => {
@@ -34,11 +38,25 @@ const Login = () => {
   // google login
   const googleLogin = () => {
     signInGoogle()
-      .then(console.log("Google Login"))
+    
+      .then(result =>{
+        navigate(from)
+      }
+      
+    )
       .catch((error) => {
         console.log(error);
       });
   };
+  const handleGithub =()=>{
+    githubLogin()
+    .then(result =>{
+        navigate(from)
+    })
+    .catch(error =>{
+        console.log(error)
+    })
+  }
   return (
     <div className=" flex flex-col md:flex lg:flex-row p-2 lg:space-x-10 mt-10 max-w-[1300px] mx-auto">
       <div
@@ -73,7 +91,7 @@ const Login = () => {
           </div>
           {/* Github  */}
           <div
-            onClick={githubLogin}
+            onClick={handleGithub}
             className="flex items-center gap-2 text-balance lg:text-2xl font-serif  font-semibold lg:p-4 bg-[#E0E7FF] rounded-lg"
           >
             <button className="lg:bg-white p-2 rounded-full">

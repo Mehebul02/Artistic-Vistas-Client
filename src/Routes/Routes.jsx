@@ -3,10 +3,14 @@ import Roots from "../layout/Roots";
 import Home from "../components/Headers/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AddCraftItem from "../pages/AddCraftItem";
+import PrivateRoute from "../privateroute/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Roots></Roots>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -18,7 +22,11 @@ const router = createBrowserRouter([
       },
       {
         path:'/register',
-        element:<Register/>
+        element:<Register/>,
+      },
+      {
+        path:'/addCraft',
+        element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
       }
     ],
   },

@@ -1,4 +1,4 @@
-import signUp from "../assets/Painting .webp";
+import signUp from "../assets/g1qh88BeY9sE8J.mp4";
 
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
@@ -28,7 +28,7 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         userUpdateProfile(name,image)
-        
+
         Swal.fire({
           title: "Success",
           text: "Registration Successfully",
@@ -45,7 +45,7 @@ const Register = () => {
   };
   return (
     <div className=" flex flex-col md:flex lg:flex-row space-x-10 mt-10 max-w-[1300px] mx-auto">
-      <div
+      {/* <div
         className=" max-w-[600px] min-h-screen  bg-gray-400 hidden lg:block  bg-no-repeat  lg:w-1/2  rounded-l-lg "
         style={{
           background: `url(${signUp})`,
@@ -54,6 +54,12 @@ const Register = () => {
         }}
       >
     
+      </div> */}
+      <div>
+       <video 
+     src={signUp}></video> 
+  
+        {/* <iframe className="w-full aspect-video ..." src={signUp}></iframe> */}
       </div>
       <div className="lg:w-full border p-6 rounded-lg shadow-lg">
         <h1 className="text-3xl font-serif font-semibold text-black">
