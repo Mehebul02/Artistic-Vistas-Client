@@ -1,12 +1,14 @@
-import { FaGithub } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import signIn from "../assets/art.avif";
 import useAuth from "../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
+import { useState } from "react";
 const Login = () => {
     const {userSignIn}=useAuth()
+    const [showPassword,setShowPassword]= useState(false)
     const handleSignIn =e=>{
         e.preventDefault()
         const form = e.target
@@ -83,19 +85,24 @@ const Login = () => {
               className="input input-bordered w-full "
             />
           </label>
-          <label className="form-control w-full ">
+          <label className="form-control w-full relative">
             <div className="label">
               <span className="label-text text-xl font-serif font-semibold">
                 Password
               </span>
             </div>
             <input
-              type="password"
+              type={showPassword?'text':"password"}
               name="password"
               placeholder="Enter Your Password"
               className="input input-bordered w-full "
               required
             />
+            <span className="absolute right-6 top-14" onClick={()=>setShowPassword(!showPassword)}>
+                {
+                    showPassword ?<FaEyeSlash className="text-xl"></FaEyeSlash >:<FaEye className="text-xl"></FaEye>
+                }
+            </span>
           </label>
           <button className="bg-[#33989B] px-3 py-2 rounded-lg text-xl font-serif text-white font-semibold mt-4">
             Sign In

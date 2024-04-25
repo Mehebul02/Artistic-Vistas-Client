@@ -4,9 +4,12 @@ import { Link,  useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
   const { createUser } = useAuth();
   const navigate =useNavigate()
+  const [showPassword,setShowPassword] = useState(false)
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -110,19 +113,25 @@ const Register = () => {
               required
             />
           </label>
-          <label className="form-control w-full ">
+          <label className="form-control w-full relative">
             <div className="label">
               <span className="label-text text-xl font-serif font-semibold">
                 Password
               </span>
             </div>
             <input
-              type="password"
+              type={showPassword?'text':"password"}
               name="password"
               placeholder="Enter Your Password"
               className="input input-bordered w-full "
               required
             />
+            <span className=" absolute right-6 top-14" onClick={()=>setShowPassword(!showPassword)}>
+                {
+                    showPassword ? <FaEyeSlash className="text-xl"></FaEyeSlash>:<FaEye className="text-xl"></FaEye>
+                }
+
+            </span>
           </label>
           <label className="form-control w-full ">
             <div className="label">

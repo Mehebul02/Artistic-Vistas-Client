@@ -2,7 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-  const {user} =useAuth()
+  const {user,userSignOut} =useAuth()
+  const handleLogOut=()=>{
+    userSignOut()
+    .then()
+    .catch(error =>{
+      console.log(error)
+    })
+  }
   const navLink = (
     <>
       <NavLink
@@ -103,7 +110,7 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-10 rounded-full">
+            <div className="w-16 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
                 src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
@@ -116,7 +123,7 @@ const Navbar = () => {
           >
             <div className="space-y-3">
               <h1 className="text-2xl font-serif font-medium">Alif Islam</h1>
-              <button  className="bg-[#571f8e] px-4 py-2 rounded-md text-xl text-white  font-serif font-semibold">
+              <button onClick={handleLogOut}  className="bg-[#571f8e] px-4 py-2 rounded-md text-xl text-white  font-serif font-semibold">
                 Log Out
               </button>
             </div>
