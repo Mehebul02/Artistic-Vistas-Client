@@ -16,7 +16,7 @@ const Navbar = () => {
         <li className="text-xl font-medium font-serif">Home</li>{" "}
       </NavLink>
       <NavLink
-        to="/addProducts"
+        to="/allArt"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -30,7 +30,7 @@ const Navbar = () => {
         </li>{" "}
       </NavLink>
       <NavLink
-        to="/myCart"
+        to="/addCraft"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -42,7 +42,7 @@ const Navbar = () => {
         <li className="text-xl font-medium font-serif">Add Craft Item</li>{" "}
       </NavLink>
       <NavLink
-        to="/myCart"
+        to="/myArt"
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -57,7 +57,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#06ABB2]">
+    <div className="navbar bg-[#06ABB2] static">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
