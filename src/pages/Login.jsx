@@ -2,7 +2,32 @@ import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import signIn from "../assets/art.avif";
+import useAuth from "../hooks/useAuth";
+import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 const Login = () => {
+    const {userSignIn}=useAuth()
+    const handleSignIn =e=>{
+        e.preventDefault()
+        const form = e.target
+        const email = form.email.value
+        const password = form.password.value
+        console.log(email,password)
+        userSignIn(email,password)
+        .then(result =>{
+            console.log(result.user)
+            Swal.fire({
+                title: "Success",
+                text: "Login Successfully",
+                icon: "success",
+              });
+              form.reset()
+        })
+        .catch(error =>{
+            console.log(error)
+            toast.error('Auth/invalid-credential')
+        })
+    }
   return (
     <div className=" flex flex-col md:flex lg:flex-row p-2 lg:space-x-10 mt-10 max-w-[1300px] mx-auto">
       <div
@@ -43,17 +68,17 @@ const Login = () => {
         </div>
         <div className="divider font-serif">Or sign In with e-mail</div>
 
-        <form>
+        <form onSubmit={handleSignIn}>
           <label className="form-control w-full ">
             <div className="label">
               <span className="label-text text-xl font-serif font-semibold">
-                Name
+                Email
               </span>
             </div>
             <input
-              type="text"
-              name="name"
-              placeholder="Enter Your Name"
+              type="email"
+              name="email"
+              placeholder="Enter Your Email"
               required
               className="input input-bordered w-full "
             />
@@ -65,7 +90,7 @@ const Login = () => {
               </span>
             </div>
             <input
-              type="text"
+              type="password"
               name="password"
               placeholder="Enter Your Password"
               className="input input-bordered w-full "
@@ -75,6 +100,7 @@ const Login = () => {
           <button className="bg-[#33989B] px-3 py-2 rounded-lg text-xl font-serif text-white font-semibold mt-4">
             Sign In
           </button>
+          <Toaster/>
         </form>
 
         <p className="text-center text-xl font-serif my-6">

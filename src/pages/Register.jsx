@@ -1,11 +1,12 @@
 import signUp from "../assets/Painting .webp";
 
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 const Register = () => {
   const { createUser } = useAuth();
+  const navigate =useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,6 +30,8 @@ const Register = () => {
           icon: "success",
         });
         form.reset();
+        navigate('/login')
+        
       })
       .catch((error) => {
         console.log(error);
