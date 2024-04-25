@@ -7,7 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
 const Login = () => {
-    const {userSignIn}=useAuth()
+    const {userSignIn,signInGoogle}=useAuth()
     const [showPassword,setShowPassword]= useState(false)
     const handleSignIn =e=>{
         e.preventDefault()
@@ -28,6 +28,15 @@ const Login = () => {
         .catch(error =>{
             console.log(error)
             toast.error('Auth/invalid-credential')
+        })
+    }
+    const googleLogin =()=>{
+        signInGoogle()
+        .then(
+            console.log('Google Login')
+        )
+        .catch(error =>{
+            console.log(error)
         })
     }
   return (
@@ -52,7 +61,7 @@ const Login = () => {
         <p>Enter your details below</p>
 
         <div className="flex mt-10 gap-4">
-          <div className="flex items-center gap-2 text-balance lg:text-2xl font-serif  font-semibold p-4 bg-[#E0E7FF] rounded-lg">
+          <div onClick={googleLogin} className="flex items-center gap-2 text-balance lg:text-2xl font-serif  font-semibold p-4 bg-[#E0E7FF] rounded-lg">
             <button className="lg:bg-white p-2 rounded-full">
               {" "}
               <FcGoogle className="text-xl lg:text-2xl  "></FcGoogle>{" "}

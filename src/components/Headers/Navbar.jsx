@@ -1,14 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { HashLoader } from "react-spinners";
 
 const Navbar = () => {
-  const {user,userSignOut} =useAuth()
+  const {user,userSignOut,loading} =useAuth()
   const handleLogOut=()=>{
     userSignOut()
     .then()
     .catch(error =>{
       console.log(error)
     })
+  }
+  if(loading){
+    return <div className="flex justify-center items-center h-screen">
+      <HashLoader height={100} radius={9} width={20} color="#36d7b7" />
+    </div>
   }
   const navLink = (
     <>
@@ -104,7 +110,7 @@ const Navbar = () => {
        {
         user ? <>
          
-        <div className="dropdown dropdown-end ">
+        <div className="dropdown dropdown-end z-[2] ">
           <div
             tabIndex={0}
             role="button"
@@ -113,7 +119,7 @@ const Navbar = () => {
             <div className="w-16 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                src={user?.photoURL}
               />
             </div>
           </div>
@@ -122,7 +128,7 @@ const Navbar = () => {
             className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content  rounded-box w-52"
           >
             <div className="space-y-3">
-              <h1 className="text-2xl font-serif font-medium">Alif Islam</h1>
+              <h1 className="text-2xl font-serif font-medium">{user?.displayName}</h1>
               <button onClick={handleLogOut}  className="bg-[#571f8e] px-4 py-2 rounded-md text-xl text-white  font-serif font-semibold">
                 Log Out
               </button>

@@ -1,15 +1,15 @@
 import signUp from "../assets/Painting .webp";
 
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
-  const { createUser } = useAuth();
-  const navigate =useNavigate()
-  const [showPassword,setShowPassword] = useState(false)
+  const { createUser,userSignOut } = useAuth();
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword,] = useState(false);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -27,14 +27,15 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+       
         Swal.fire({
           title: "Success",
           text: "Registration Successfully",
           icon: "success",
         });
         form.reset();
-        navigate('/login')
-        
+        navigate("/login");
+        userSignOut()
       })
       .catch((error) => {
         console.log(error);
@@ -51,10 +52,7 @@ const Register = () => {
           backgroundOrigin: "content-box",
         }}
       >
-        {/* <p className="font-bold text-3xl font-serif p-4 mt-20 mx-6">
-          We Offer the <br />
-          Best Products
-        </p> */}
+    
       </div>
       <div className="lg:w-full border p-6 rounded-lg shadow-lg">
         <h1 className="text-3xl font-serif font-semibold text-black">
@@ -66,23 +64,7 @@ const Register = () => {
             Register Now
           </h1>
         </div>
-        <div className="flex mt-2 gap-3">
-          {/* <div className="flex  gap-2 text-2xl font-serif  font-semibold p-4 bg-[#E0E7FF] rounded-lg">
-            <button className="bg-white p-2 rounded-full">
-              {" "}
-              <FcGoogle className="text-2xl  "></FcGoogle>{" "}
-            </button>
-            <h1>Sign In Google</h1>
-          </div> */}
-          {/* Github  */}
-          {/* <div className="flex  gap-2 text-2xl font-serif  font-semibold p-4 bg-[#E0E7FF] rounded-lg">
-            <button className="bg-white p-2 rounded-full">
-              {" "}
-              <FaGithub className="text-2xl  "></FaGithub>{" "}
-            </button>
-            <h1>Sign In Github</h1>
-          </div> */}
-        </div>
+        <div className="flex mt-2 gap-3"></div>
 
         <form onSubmit={handleRegister}>
           <label className="form-control w-full ">
@@ -120,17 +102,21 @@ const Register = () => {
               </span>
             </div>
             <input
-              type={showPassword?'text':"password"}
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Enter Your Password"
               className="input input-bordered w-full "
               required
             />
-            <span className=" absolute right-6 top-14" onClick={()=>setShowPassword(!showPassword)}>
-                {
-                    showPassword ? <FaEyeSlash className="text-xl"></FaEyeSlash>:<FaEye className="text-xl"></FaEye>
-                }
-
+            <span
+              className=" absolute right-6 top-14"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <FaEyeSlash className="text-xl"></FaEyeSlash>
+              ) : (
+                <FaEye className="text-xl"></FaEye>
+              )}
             </span>
           </label>
           <label className="form-control w-full ">
