@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
-  const { createUser,userSignOut } = useAuth();
+  const { createUser,userSignOut,userUpdateProfile } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword,] = useState(false);
   const handleRegister = (e) => {
@@ -27,7 +27,8 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-       
+        userUpdateProfile(name,image)
+        
         Swal.fire({
           title: "Success",
           text: "Registration Successfully",
