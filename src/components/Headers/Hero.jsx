@@ -18,7 +18,7 @@ const Hero = () => {
     <div>
       <div>
         <Swiper
-          className="bg-[#c5b2f0]"
+          className="bg-[#c5b2f0] p-2 lg:p-0 "
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
