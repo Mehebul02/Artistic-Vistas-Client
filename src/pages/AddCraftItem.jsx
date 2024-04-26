@@ -53,45 +53,28 @@ const AddCraftItem = () => {
         }
       });
 
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(allProducts),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     if(data.insertedId){
-    //       Swal.fire({
-    //         title: 'Success',
-    //         text: 'Add Crafts Successfully',
-    //         icon: 'success',
-    //         confirmButtonText: 'Ok'
-    //       })
-    //       form.reset()
-    //     }
-    //   });
   };
   return (
-    <div className=" max-w-[1320px] mx-auto bg-base-100 p-10 shadow-lg rounded-lg border my-10">
+    <div className=" max-w-[1320px] mx-auto bg-[#0E2332] p-10 shadow-lg rounded-lg border my-10">
       <div className="  text-center flex md:flex items-center gap-3"></div>
-      <div className="flex md:flex justify-center  items-center gap-3">
+  
+     <div className="flex md:flex justify-center  items-center gap-3">
         <div className="bg-[#571f8e] p-1 rounded-full">
           <IoIosAddCircle className="text-white text-2xl "></IoIosAddCircle>
         </div>
-        <h1 className="  lg:text-4xl font-semibold font-serif">
+        <h1 className="  lg:text-4xl font-semibold text-white font-serif">
           <span className="text-[#374fb0]">Add</span> Craft Item
         </h1>
       </div>
+     
 
       <div>
-        <form onSubmit={handleAddCraftItem}>
+        <form onSubmit={handleAddCraftItem} className="space-y-6 mt-6">
           <div className="flex flex-col md:flex  lg:flex-row items-center lg:gap-10 ">
             {/* image url */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Image Url
                 </span>
               </div>
@@ -106,7 +89,7 @@ const AddCraftItem = () => {
             {/*item Name input  */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Item_Name
                 </span>
               </div>
@@ -124,7 +107,7 @@ const AddCraftItem = () => {
 
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Subcategory_Name
                 </span>
               </div>
@@ -139,7 +122,7 @@ const AddCraftItem = () => {
             {/* price input  */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Price
                 </span>
               </div>
@@ -157,7 +140,7 @@ const AddCraftItem = () => {
             {/* Rating input  */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Rating
                 </span>
               </div>
@@ -174,7 +157,7 @@ const AddCraftItem = () => {
             {/*  customization input  */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Customization
                 </span>
               </div>
@@ -197,7 +180,7 @@ const AddCraftItem = () => {
 
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Processing Time
                 </span>
               </div>
@@ -214,7 +197,7 @@ const AddCraftItem = () => {
             {/* Stock Status input  */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Stock Status
                 </span>
               </div>
@@ -235,7 +218,7 @@ const AddCraftItem = () => {
 
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Your Email
                 </span>
               </div>
@@ -252,7 +235,7 @@ const AddCraftItem = () => {
             {/* user name input  */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Your Name
                 </span>
               </div>
@@ -268,7 +251,7 @@ const AddCraftItem = () => {
             {/* Description input  */}
             <label className="form-control w-full ">
               <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
+                <span className="label-text text-white text-xl font-serif font-semibold">
                   Description
                 </span>
               </div>
@@ -285,7 +268,7 @@ const AddCraftItem = () => {
           <input
             type="submit"
             required
-            value="Add Product"
+            value="Add Craft"
             className=" bg-[#571f8e] block  mx-auto px-6 py-2 text-2xl font-serif text-white rounded-lg my-10 cursor-pointer"
           />
         </form>
