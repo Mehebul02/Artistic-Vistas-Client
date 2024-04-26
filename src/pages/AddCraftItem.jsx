@@ -79,21 +79,6 @@ const AddCraftItem = () => {
       <div>
         <form onSubmit={handleAddCraftItem}>
           <div className="flex flex-col md:flex  lg:flex-row items-center lg:gap-10 ">
-            {/* Name input  */}
-            <label className="form-control w-full ">
-              <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
-                  Name
-                </span>
-              </div>
-              <input
-                type="text"
-                required
-                name="name"
-                placeholder="Name"
-                className="input input-bordered  focus:outline-[#571f8e] w-full "
-              />
-            </label>
             {/* image url */}
             <label className="form-control w-full ">
               <div className="label">
@@ -109,47 +94,40 @@ const AddCraftItem = () => {
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
-          </div>
-          <div className="flex flex-col lg:flex-row justify-center  items-center lg:gap-10 ">
-            {/* Brand Name input  */}
+            {/* Name input  */}
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
-                  Brand Name
-                </span>
-              </div>
-              <select name="brand" required className="select select-bordered">
-                <option disabled selected>
-                  Select Brand
-                </option>
-                <option>Huawei</option>
-                <option>Asus</option>
-                <option>Hp</option>
-                <option>LG</option>
-                <option>Samsung</option>
-                <option>Apple</option>
-                <option>Google</option>
-                <option></option>
-              </select>
-            </label>
-
-            <label className="form-control w-full ">
-              <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
-                  Type
+                  Item_Name
                 </span>
               </div>
               <input
                 type="text"
                 required
-                name="type"
-                placeholder="Enter Type"
+                name="name"
+                placeholder="Name"
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
           </div>
-          <div className="flex flex-col lg:flex-row items-center lg:gap-10 ">
-            {/* Name input  */}
+          <div className="flex flex-col lg:flex-row justify-center  items-center lg:gap-10 ">
+            {/* subcategory_Name input  */}
+
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
+                  Subcategory_Name
+                </span>
+              </div>
+              <input
+                type="text"
+                required
+                name="subcategoryName  "
+                placeholder="Subcategory Name"
+                className="input input-bordered  focus:outline-[#571f8e] w-full "
+              />
+            </label>
+            {/* price input  */}
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
@@ -160,10 +138,14 @@ const AddCraftItem = () => {
                 type="text"
                 required
                 name="price"
-                placeholder="Enter Price"
+                placeholder="Price
+                "
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
+          </div>
+          <div className="flex flex-col lg:flex-row items-center lg:gap-10 ">
+            {/* Rating input  */}
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
@@ -171,28 +153,127 @@ const AddCraftItem = () => {
                 </span>
               </div>
               <input
-                type="text"
+                type="number"
+                max="5"
+                min="1"
                 required
                 name="rating"
                 placeholder="Rating"
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
+            {/*  customization input  */}
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
+                  Customization
+                </span>
+              </div>
+              <select name="brand" required className="select select-bordered">
+                <option disabled selected>
+                  Select
+                </option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
           </div>
-          <label className="form-control w-full ">
-            <div className="label">
-              <span className="label-text text-xl font-serif font-semibold">
+          <div className="flex flex-col lg:flex-row justify-center  items-center lg:gap-10 ">
+            {/* processing_time
+ input  */}
+
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
+                Processing Time
+                </span>
+              </div>
+              <input
+                type="number"
+                max="100"
+                min="1"
+                required
+                name=" processingTime"
+                placeholder=" Processing Time"
+                className="input input-bordered  focus:outline-[#571f8e] w-full "
+              />
+            </label>
+            {/* Stock Status input  */}
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
+                Stock Status
+                </span>
+              </div>
+              <select name="brand" required className="select select-bordered">
+                <option disabled selected>
+                  Select
+                </option>
+                <option> In stock</option>
+                <option>Made to Order</option>
+              </select>
+            </label>
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
+                  Price
+                </span>
+              </div>
+              <input
+                type="text"
+                required
+                name="price"
+                placeholder="Price
+                "
+                className="input input-bordered  focus:outline-[#571f8e] w-full "
+              />
+            </label>
+          </div>
+          <div className="flex flex-col lg:flex-row justify-center mt-4  items-center lg:gap-10 ">
+            {/* user email input  */}
+
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
+                  Your Email
+                </span>
+              </div>
+              <input
+                type="email"
+                required
+                name="email  "
+                placeholder="Email"
+                className="input input-bordered  focus:outline-[#571f8e] w-full "
+              />
+            </label>
+            {/* price input  */}
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
+                 Your Name
+                </span>
+              </div>
+              <input
+                type="text"
+                required
+                name="name"
+                placeholder="Name
+                "
+                className="input input-bordered  focus:outline-[#571f8e] w-full "
+              />
+            </label>
+            {/* Description input  */}
+            <label className="form-control w-full ">
+              <div className="label">
+                <span className="label-text text-xl font-serif font-semibold">
                 Description
-              </span>
-            </div>
-            <input
-              type="text"
-              required
-              name="description"
-              placeholder="Description"
-              className="input input-bordered  focus:outline-[#571f8e] w-full "
-            />
-          </label>
+                </span>
+              </div>
+              <textarea name="description" placeholder="Short Description----" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
+            </label>
+            
+          </div>
+         
           <input
             type="submit"
             required
