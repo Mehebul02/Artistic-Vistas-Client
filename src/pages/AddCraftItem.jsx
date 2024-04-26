@@ -1,7 +1,9 @@
 import { IoIosAddCircle } from "react-icons/io";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const AddCraftItem = () => {
+  const {user} = useAuth()
   const handleAddCraftItem = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -90,7 +92,7 @@ const AddCraftItem = () => {
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-white text-xl font-serif font-semibold">
-                  Item_Name
+                  Item Name
                 </span>
               </div>
               <input
@@ -227,6 +229,7 @@ const AddCraftItem = () => {
                 required
                 name="email"
                 placeholder="Email"
+                defaultValue={user.email}
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
@@ -245,6 +248,7 @@ const AddCraftItem = () => {
                 name="name"
                 placeholder="Name
                 "
+                defaultValue={user.displayName}
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>

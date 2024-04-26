@@ -1,0 +1,40 @@
+import { RiStarFill } from "react-icons/ri";
+import { SiProcessingfoundation } from "react-icons/si";
+
+const Card = ({craft}) => {
+    console.log(craft)
+    const{image} = craft
+    return (
+        <div className="card p-4 w-full bg-base-100 border shadow-lg">
+          <figure className="relative ">
+            <img className="w-96 h-64 mx-auto" src={image} alt="Shoes" />
+
+            <span className="bg-[#06ABB2] text-white font-serif p-2 absolute top-0 left-0">
+              Instock
+            </span>
+          </figure>
+          <span className="flex justify-around items-center gap-4 mt-4">
+            <span className="flex items-center gap-3">
+            <RiStarFill className="text-xl text-[#06ABB2]"></RiStarFill>
+            <h1 className=" font-medium">4.2</h1>
+            </span>
+           <span className="flex items-center gap-3">
+           <SiProcessingfoundation className="text-xl text-[#06b23a]"></SiProcessingfoundation>
+           <h1 className=" font-medium">33</h1>
+           </span>
+          </span>
+          <div className="space-y-3">
+            <h2 className="card-title text-3xl font-semibold font-serif">
+              Landscape Painting
+            </h2>
+            <p className="text-sm font-serif text-gray-600">If a dog chews shoes whose shoes does he choose shoes whose shoes does he choose.......</p>
+            <h1 className="text-2xl font-sans font-medium ">Price:$324</h1>
+            <div className="card-actions justify-center ">
+              <button className="bg-[#06ABB2] hover:bg-[#2e9a9e] mt-3 px-4 py-2 rounded-lg text-xl text-white font-serif w-full font-semibold">View Details</button>
+            </div>
+          </div>
+        </div>
+    );
+};
+
+export default Card;
