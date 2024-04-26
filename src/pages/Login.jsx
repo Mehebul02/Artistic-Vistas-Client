@@ -19,6 +19,9 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    if(password){
+     return toast.error('Doesn’t match your password')
+    }
     userSignIn(email, password)
       .then((result) => {
         console.log(result.user);
@@ -27,12 +30,14 @@ const Login = () => {
           text: "Login Successfully",
           icon: "success",
         });
+        
         navigate(from)
         form.reset();
       })
       .catch((error) => {
         console.log(error);
         toast.error("Auth/invalid-credential");
+        
       });
   };
   // google login
