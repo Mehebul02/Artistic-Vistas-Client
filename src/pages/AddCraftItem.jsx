@@ -5,21 +5,30 @@ const AddCraftItem = () => {
   const handleAddCraftItem = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+
     const image = form.image.value;
-    const brand = form.brand.value;
-    const type = form.type.value;
+    const itemName = form.itemName.value;
+    const subcategoryName = form.subcategory.value;
     const price = form.price.value;
     const rating = form.rating.value;
+    const customization = form.customization.value;
+    const processingTime = form.processingTime.value;
+    const stockStatus = form.stockStatus.value;
+    const email = form.email.value
+    const name = form.name.value
     const description = form.description.value;
     const addCraftItem = {
-      name,
       image,
-      brand,
-      type,
-      price,
-      rating,
-      description,
+      itemName,
+      subcategoryName,
+        price,
+        rating,
+        customization,
+        processingTime,
+        stockStatus,
+        email,
+        name,
+        description,
     };
 
     console.log(addCraftItem);
@@ -83,18 +92,18 @@ const AddCraftItem = () => {
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
-                  Image
+                  Image Url
                 </span>
               </div>
               <input
-                type="text"
+                type="imageUrl"
                 required
                 name="image"
                 placeholder="Enter Your Image"
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
-            {/* Name input  */}
+            {/*item Name input  */}
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
@@ -104,8 +113,8 @@ const AddCraftItem = () => {
               <input
                 type="text"
                 required
-                name="name"
-                placeholder="Name"
+                name="itemName"
+                placeholder="Item Name"
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
@@ -122,7 +131,7 @@ const AddCraftItem = () => {
               <input
                 type="text"
                 required
-                name="subcategoryName  "
+                name="subcategory"
                 placeholder="Subcategory Name"
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
@@ -135,7 +144,7 @@ const AddCraftItem = () => {
                 </span>
               </div>
               <input
-                type="text"
+                type="number"
                 required
                 name="price"
                 placeholder="Price
@@ -169,7 +178,12 @@ const AddCraftItem = () => {
                   Customization
                 </span>
               </div>
-              <select name="brand" required className="select select-bordered">
+              <select
+                type="text"
+                name="customization"
+                required
+                className="select select-bordered"
+              >
                 <option disabled selected>
                   Select
                 </option>
@@ -179,13 +193,12 @@ const AddCraftItem = () => {
             </label>
           </div>
           <div className="flex flex-col lg:flex-row justify-center  items-center lg:gap-10 ">
-            {/* processing_time
- input  */}
+            {/* processing_time input  */}
 
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
-                Processing Time
+                  Processing Time
                 </span>
               </div>
               <input
@@ -193,7 +206,7 @@ const AddCraftItem = () => {
                 max="100"
                 min="1"
                 required
-                name=" processingTime"
+                name="processingTime"
                 placeholder=" Processing Time"
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
@@ -202,10 +215,15 @@ const AddCraftItem = () => {
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
-                Stock Status
+                  Stock Status
                 </span>
               </div>
-              <select name="brand" required className="select select-bordered">
+              <select
+                type="text"
+                name="stockStatus"
+                required
+                className="select select-bordered"
+              >
                 <option disabled selected>
                   Select
                 </option>
@@ -213,23 +231,6 @@ const AddCraftItem = () => {
                 <option>Made to Order</option>
               </select>
             </label>
-            <label className="form-control w-full ">
-              <div className="label">
-                <span className="label-text text-xl font-serif font-semibold">
-                  Price
-                </span>
-              </div>
-              <input
-                type="text"
-                required
-                name="price"
-                placeholder="Price
-                "
-                className="input input-bordered  focus:outline-[#571f8e] w-full "
-              />
-            </label>
-          </div>
-          <div className="flex flex-col lg:flex-row justify-center mt-4  items-center lg:gap-10 ">
             {/* user email input  */}
 
             <label className="form-control w-full ">
@@ -241,16 +242,18 @@ const AddCraftItem = () => {
               <input
                 type="email"
                 required
-                name="email  "
+                name="email"
                 placeholder="Email"
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
             </label>
-            {/* price input  */}
+          </div>
+          <div className="flex flex-col lg:flex-row justify-center mt-4  items-center lg:gap-10 ">
+            {/* user name input  */}
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
-                 Your Name
+                  Your Name
                 </span>
               </div>
               <input
@@ -266,14 +269,19 @@ const AddCraftItem = () => {
             <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-xl font-serif font-semibold">
-                Description
+                  Description
                 </span>
               </div>
-              <textarea name="description" placeholder="Short Description----" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
+              <textarea
+                type="text"
+                name="description"
+                rows="5"
+                placeholder="Short Description----"
+                className="textarea textarea-bordered textarea-lg w-full "
+              ></textarea>
             </label>
-            
           </div>
-         
+
           <input
             type="submit"
             required
