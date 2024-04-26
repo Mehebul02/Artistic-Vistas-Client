@@ -12,6 +12,11 @@ const Home = () => {
       <div className=" min-h-screen">
         <Hero></Hero>
       </div>
+      <div className="text-center my-10 space-y-4">
+      <h1 className="text-4xl text-black font-serif ">Craft Items Section</h1>
+      <p className="text-xl font-serif">From intricate hand-sewn textiles to beautifully sculpted ceramics, discover artisanal treasures <br />waiting to adorn your home or inspire your next project. Each item is a testament to craftsmanship and creativity.</p>
+      <div className="divider"></div>
+      </div>
       <div className="max-w-[1300px] mx-auto grid grid-cols-3 gap-6 ">
         
         {
