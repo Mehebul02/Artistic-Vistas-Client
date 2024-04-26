@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 const Register = () => {
   const { createUser,userSignOut,userUpdateProfile } = useAuth();
   const navigate = useNavigate();
@@ -57,13 +58,23 @@ const Register = () => {
       </div> */}
       <div>
        <video 
-     src={signUp}></video> 
+     src={signUp} autoPlay loop muted></video> 
   
         {/* <iframe className="w-full aspect-video ..." src={signUp}></iframe> */}
       </div>
       <div className="lg:w-full border p-6 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-serif font-semibold text-black">
-          Welcome To Artistic Vistas
+        <h1 className="text-3xl text-red-700 font-serif font-semibold ">
+         
+          <Typewriter  
+            words={[" Welcome To Artistic Vistas", ]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
         </h1>
         <p className="font-medium ">Enter your details below</p>
         <div className="divider">

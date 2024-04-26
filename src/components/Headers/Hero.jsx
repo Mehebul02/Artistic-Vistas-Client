@@ -12,6 +12,10 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { MdDraw } from "react-icons/md";
+import { Typewriter } from "react-simple-typewriter";
+
+
+
 
 const Hero = () => {
   return (
@@ -42,7 +46,17 @@ const Hero = () => {
                   <MdDraw className="text-white text-xl"></MdDraw>
                   </button>
                   <h1 className="text-2xl font-serif font-semibold">
-                  Top Printing Drawing
+                    
+                  <Typewriter 
+            words={["Top Printing Drawing", ]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
                   </h1>
                 </div>
                 <h1 className="text-4xl space-y-4 font-serif font-bold text-[#571f8e]">
@@ -84,7 +98,16 @@ const Hero = () => {
                   <MdDraw className="text-white text-xl"></MdDraw>
                   </button>
                   <h1 className="text-2xl font-serif font-semibold">
-                  Top Printing Drawing
+                  <Typewriter 
+            words={["Top Printing Drawing", ]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
                   </h1>
                 </div>
                 <h1 className="text-4xl space-y-4 font-serif font-bold text-[#571f8e]">
@@ -126,7 +149,16 @@ const Hero = () => {
                   <MdDraw className="text-white text-xl"></MdDraw>
                   </button>
                   <h1 className="text-2xl font-serif font-semibold">
-                  Top Printing Drawing
+                  <Typewriter 
+            words={["Top Printing Drawing", ]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
                   </h1>
                 </div>
                 <h1 className="text-4xl space-y-4 font-serif font-bold text-[#571f8e]">
@@ -168,7 +200,16 @@ const Hero = () => {
                   <MdDraw className="text-white text-xl"></MdDraw>
                   </button>
                   <h1 className="text-2xl font-serif font-semibold">
-                  Top Printing Drawing
+                  <Typewriter 
+            words={["Top Printing Drawing", ]}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
                   </h1>
                 </div>
                 <h1 className="text-4xl space-y-4 font-serif font-bold text-[#571f8e]">
