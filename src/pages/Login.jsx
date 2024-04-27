@@ -1,6 +1,6 @@
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, json, useLocation, useNavigate } from "react-router-dom";
 import signIn from "../assets/art.avif";
 import useAuth from "../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
@@ -9,9 +9,9 @@ import { useState } from "react";
 const Login = () => {
   const { userSignIn, signInGoogle, githubLogin } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
-  const navigate =useNavigate()
-  const location =useLocation()
-  const from = location ?.state || '/'
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
   // sign in
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -19,49 +19,60 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    if(password){
-     return toast.error('Doesn’t match your password')
+    if (password) {
+      return toast.error("Doesn’t match your password");
     }
     userSignIn(email, password)
       .then((result) => {
         console.log(result.user);
+        // const user = {
+        //   email,
+        //   lastLoggetAt: result.user?.metadata?.lastSignInTime,
+        // };
+        // fetch("http://localhost:5000/crafts", {
+        //   method: "PATCH",
+        //   headers:{
+        //     'Content-Type':'application/json'
+        //   },
+        //   body: JSON.stringify(user),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //   });
         Swal.fire({
           title: "Success",
           text: "Login Successfully",
           icon: "success",
         });
-        
-        navigate(from)
+
+        navigate(from);
         form.reset();
       })
       .catch((error) => {
         console.log(error);
         toast.error("Auth/invalid-credential");
-        
       });
   };
   // google login
   const googleLogin = () => {
     signInGoogle()
-    
-      .then(result =>{
-        navigate(from)
-      }
-      
-    )
+      .then((result) => {
+        navigate(from);
+      })
       .catch((error) => {
         console.log(error);
       });
   };
-  const handleGithub =()=>{
+  const handleGithub = () => {
     githubLogin()
-    .then(result =>{
-        navigate(from)
-    })
-    .catch(error =>{
-        console.log(error)
-    })
-  }
+      .then((result) => {
+        navigate(from);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className=" flex flex-col md:flex lg:flex-row p-2 lg:space-x-10 mt-10 max-w-[1300px] mx-auto">
       <div

@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 const CraftDetails = () => {
 const craft = useLoaderData()
-const{_id,image,itemName,price,stockStatus,rating,processingTime,description,customization,subcategoryName} = craft
+const{_id,image,itemName,price,stockStatus,rating,processingTime,description,customization,subcategoryName,email} = craft
     return (
         <div data-aos="flip-left" className="card lg:card-side p-4 max-w-[1100px] mx-auto mt-10  bg-base-100">
         <figure ><img className="border  rounded-lg" src={image} alt=""/>
@@ -31,6 +31,7 @@ const{_id,image,itemName,price,stockStatus,rating,processingTime,description,cus
           <div className="card-actions mt-5 justify-center">
             <button className="bg-[#571F8E] px-4 py-2 rounded-md text-xl text-white font-serif">Purchase</button>
           </div>
+          <h1>{email}</h1>
         </div>
       </div>
     );

@@ -16,8 +16,8 @@ const AddCraftItem = () => {
     const customization = form.customization.value;
     const processingTime = form.processingTime.value;
     const stockStatus = form.stockStatus.value;
-    const email = form.email.value
-    const name = form.name.value
+    const email = user.email
+    // const name = form.name.value
     const description = form.description.value;
     const addCraftItem = {
       image,
@@ -218,7 +218,7 @@ const AddCraftItem = () => {
             </label>
             {/* user email input  */}
 
-            <label className="form-control w-full ">
+            {/* <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-white text-xl font-serif font-semibold">
                   Your Email
@@ -232,11 +232,11 @@ const AddCraftItem = () => {
                 defaultValue={user.email}
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
-            </label>
+            </label> */}
           </div>
           <div className="flex flex-col lg:flex-row justify-center mt-4  items-center lg:gap-10 ">
             {/* user name input  */}
-            <label className="form-control w-full ">
+            {/* <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-white text-xl font-serif font-semibold">
                   Your Name
@@ -251,7 +251,7 @@ const AddCraftItem = () => {
                 defaultValue={user.displayName}
                 className="input input-bordered  focus:outline-[#571f8e] w-full "
               />
-            </label>
+            </label> */}
             {/* Description input  */}
             <label className="form-control w-full ">
               <div className="label">
