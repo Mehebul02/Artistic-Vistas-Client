@@ -1,5 +1,6 @@
 import { RiStarFill } from "react-icons/ri";
 import { SiProcessingfoundation } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const Card = ({craft}) => {
     console.log(craft)
@@ -8,7 +9,7 @@ const Card = ({craft}) => {
     return (
         <div  data-aos='zoom-in-up' className="card p-4 w-full bg-base-100 border shadow-lg">
           <figure className="relative ">
-            <img className="w-96 h-64 mx-auto" src={image} alt="Shoes" />
+            <img className="w-96 h-64 mx-auto" src={image} alt="" />
 
             <span className="bg-[#06ABB2] text-white font-serif p-2 absolute top-0 left-0">
              {stockStatus}
@@ -31,7 +32,9 @@ const Card = ({craft}) => {
             <p className="text-sm font-serif text-gray-600"> {description.slice(0,100)}</p>
             <h1 className="text-2xl font-sans font-medium ">Price:${price}</h1>
             <div className="card-actions justify-center ">
-              <button className="bg-[#06ABB2] hover:bg-[#2e9a9e] mt-3 px-4 py-2 rounded-lg text-xl text-white font-serif w-full font-semibold">View Details</button>
+             <Link to={`/details/${_id}`}>
+             <button className="bg-[#06ABB2] hover:bg-[#2e9a9e] mt-3 px-4 py-2 rounded-lg text-xl text-white font-serif w-full font-semibold">View Details</button>
+             </Link>
             </div>
           </div>
         </div>

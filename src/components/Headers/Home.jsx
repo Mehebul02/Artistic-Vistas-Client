@@ -17,7 +17,7 @@ const Home = () => {
       <p className="text-xl font-serif">From intricate hand-sewn textiles to beautifully sculpted ceramics, discover artisanal treasures <br />waiting to adorn your home or inspire your next project. Each item is a testament to craftsmanship and creativity.</p>
       <div className="divider"></div>
       </div>
-      <div className="max-w-[1300px] mx-auto grid grid-cols-3 gap-6 ">
+      <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         
         {
           crafts.map(craft => <Card key={craft._id} craft={craft}></Card>)
