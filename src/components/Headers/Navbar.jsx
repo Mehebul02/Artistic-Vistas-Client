@@ -33,7 +33,7 @@ const Navbar = () => {
   }
   if(loading){
     return <div className="flex justify-center items-center h-screen">
-      <HashLoader height={100} radius={9} width={20} color="#36d7b7" />
+      <HashLoader height={140} radius={9} width={40} color="#36d7b7" />
     </div>
   }
   const navLink = (

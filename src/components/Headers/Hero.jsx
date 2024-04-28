@@ -1,7 +1,8 @@
 import image1 from "../../assets/slide_image/1st_.jpg";
 import image2 from "../../assets/slide_image/2nd.jpg";
 import image3 from "../../assets/slide_image/3rd.jpg";
-import image4 from "../../assets/slide_image/4th.jpg";
+import image4 from "../../assets/card img/outline ported.jpg";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
