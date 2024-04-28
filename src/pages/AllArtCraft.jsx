@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const AllArtCraft = () => {
@@ -30,9 +31,9 @@ const AllArtCraft = () => {
           {allCrafts.map((allCraft, idx) => (
             <tr key={idx}>
               <th>{idx + 1}</th>
-              <td>{allCraft.itemName}</td>
-              <td>{}</td>
-              <td>{allCraft.price}</td>
+              <td className="font-serif font-semibold">{allCraft.itemName}</td>
+              <td>{allCraft.subcategoryName}</td>
+              <td>${allCraft.price}</td>
               <td>{allCraft.rating}</td>
               <td>{allCraft.customization}</td>
               <td>{allCraft.stockStatus}</td>

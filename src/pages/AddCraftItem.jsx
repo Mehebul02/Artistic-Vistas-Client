@@ -17,7 +17,7 @@ const AddCraftItem = () => {
     const processingTime = form.processingTime.value;
     const stockStatus = form.stockStatus.value;
     const email = user.email
-    // const name = form.name.value
+    const name = user.displayName
     const description = form.description.value;
     const addCraftItem = {
       image,

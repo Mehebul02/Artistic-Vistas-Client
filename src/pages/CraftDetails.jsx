@@ -31,7 +31,7 @@ const{_id,image,itemName,price,stockStatus,rating,processingTime,description,cus
           <div className="card-actions mt-5 justify-center">
             <button className="bg-[#571F8E] px-4 py-2 rounded-md text-xl text-white font-serif">Purchase</button>
           </div>
-          <h1>{email}</h1>
+         
         </div>
       </div>
     );

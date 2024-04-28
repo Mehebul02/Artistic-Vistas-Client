@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({craft}) => {
     console.log(craft)
+   
     const{_id,image,itemName,price,stockStatus,rating,processingTime,description} = craft
 
     return (
