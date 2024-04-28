@@ -8,38 +8,47 @@ import PrivateRoute from "../privateroute/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage";
 import CraftDetails from "../pages/CraftDetails";
 import MyCraftList from "../pages/MyCraftList";
+import AllArtCraft from "../pages/AllArtCraft";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Roots></Roots>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader:()=>fetch('http://localhost:5000/crafts')
+        loader: () => fetch("http://localhost:5000/crafts"),
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path:'/register',
-        element:<Register/>,
+        path: "/register",
+        element: <Register />,
       },
       {
-        path:'/addCraft',
-        element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
+        path: "/addCraft",
+        element: (
+          <PrivateRoute>
+            <AddCraftItem></AddCraftItem>
+          </PrivateRoute>
+        ),
       },
       {
-        path:'/details/:id',
-        element:<CraftDetails/>,
-        loader:({params}) => fetch(`http://localhost:5000/crafts/${params.id}`)
+        path: "/details/:id",
+        element: <PrivateRoute><CraftDetails /></PrivateRoute>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/crafts/${params.id}`),
       },
       {
-        path:'/myCraft',
-        element:<PrivateRoute><MyCraftList/></PrivateRoute>,
-        
+        path: "/myCraft",
+        element: <PrivateRoute><MyCraftList /></PrivateRoute>
+      },
+      {
+        path:'/allArt',
+        element:<AllArtCraft/>
       }
     ],
   },
