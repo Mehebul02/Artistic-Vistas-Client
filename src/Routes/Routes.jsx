@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/crafts"),
+        loader: () => fetch("https://artistic-vistas-server.vercel.app/crafts"),
       },
       {
         path: "/login",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <PrivateRoute><CraftDetails /></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/crafts/${params.id}`),
+          fetch(`https://artistic-vistas-server.vercel.app/crafts/${params.id}`),
       },
       {
         path: "/myCraft",
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       {
         path:'/update/:id',
         element:<UpdatePage/>,
-        loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
+        loader:({params})=>fetch(`https://artistic-vistas-server.vercel.app/crafts/${params.id}`)
       }
     ],
   },

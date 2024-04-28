@@ -53,7 +53,7 @@ const UpdatePage = () => {
     };
 
     console.log(addCraftItem);
-    fetch(`http://localhost:5000/crafts/${loadedUpdate._id}`, {
+    fetch(`https://artistic-vistas-server.vercel.app/crafts/${loadedUpdate._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

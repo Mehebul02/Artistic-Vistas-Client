@@ -29,7 +29,7 @@ const Login = () => {
         //   email,
         //   lastLoggetAt: result.user?.metadata?.lastSignInTime,
         // };
-        // fetch("http://localhost:5000/crafts", {
+        // fetch("https://artistic-vistas-server.vercel.app/crafts", {
         //   method: "PATCH",
         //   headers:{
         //     'Content-Type':'application/json'

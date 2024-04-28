@@ -34,7 +34,7 @@ const AddCraftItem = () => {
     };
 
     console.log(addCraftItem);
-    fetch("http://localhost:5000/crafts", {
+    fetch("https://artistic-vistas-server.vercel.app/crafts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

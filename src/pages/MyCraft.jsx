@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 import { RiStarFill } from "react-icons/ri";
 import { SiProcessingfoundation } from "react-icons/si";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyCraft = ({ craft,crafts,setCrafts }) => {
- 
+const MyCraft = ({ craft, crafts, setCrafts }) => {
   const {
     _id,
     image,
@@ -30,8 +30,7 @@ const MyCraft = ({ craft,crafts,setCrafts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-       
-        fetch(`http://localhost:5000/crafts/${_id}`, {
+        fetch(`https://artistic-vistas-server.vercel.app/crafts/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -44,21 +43,18 @@ const MyCraft = ({ craft,crafts,setCrafts }) => {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
-                icon: "success"
+                icon: "success",
               });
             }
           });
       }
     });
-  //  data-aos="zoom-in-up"
-
+    //  data-aos="zoom-in-up"
   };
   return (
-   
-    <div
-     
-      className="card mt-10 p-4 w-full bg-base-100 border shadow-lg"
-    >
+    <div >
+      
+      <div className="card mt-28 p-4 w-full bg-base-100 border shadow-lg">
       <figure className="relative ">
         <img className="w-96 h-64 mx-auto" src={image} alt="" />
 
@@ -99,6 +95,7 @@ const MyCraft = ({ craft,crafts,setCrafts }) => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

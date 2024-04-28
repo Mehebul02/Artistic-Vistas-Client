@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AllArtCraft = () => {
   const [allCrafts, setAllCrafts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/crafts")
+    fetch("https://artistic-vistas-server.vercel.app/crafts")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
