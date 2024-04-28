@@ -19,9 +19,9 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    if (password) {
-      return toast.error("Doesn’t match your password");
-    }
+    // if (password) {
+    //   return toast.error("Doesn’t match your password");
+    // }
     userSignIn(email, password)
       .then((result) => {
         console.log(result.user);

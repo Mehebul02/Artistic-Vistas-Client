@@ -15,14 +15,13 @@ const MyCraftList = () => {
         setCrafts(data)
       });
   }, [user]);
-//   const myCraft = useLoaderData();
-//   console.log(myCraft);
+
   return (
     <div>
      <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         
        {
-       crafts?.map(craft =><MyCraft key={craft._id} craft={craft}></MyCraft>)
+       crafts?.map(craft =><MyCraft key={craft._id} craft={craft} crafts={crafts} setCrafts={setCrafts}></MyCraft>)
        }
         
         
