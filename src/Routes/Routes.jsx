@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage";
 import CraftDetails from "../pages/CraftDetails";
 import MyCraftList from "../pages/MyCraftList";
 import AllArtCraft from "../pages/AllArtCraft";
+import UpdatePage from "../pages/UpdatePage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
       {
         path:'/allArt',
         element:<AllArtCraft/>
+      },
+      {
+        path:'/update/:id',
+        element:<UpdatePage/>,
+        loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
       }
     ],
   },

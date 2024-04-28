@@ -13,9 +13,9 @@ const AllArtCraft = () => {
       });
   }, []);
   return (
-    <div className="overflow-x-auto max-w-[1300px] mx-auto mt-10">
+    <div className="overflow-x-auto max-w-[1320px] mx-auto mt-10">
       <table className="table border table-lg rounded-lg">
-        <thead className="text-xl bg-gray-600 text-black font-serif ">
+        <thead className="text-xl text-white font-semibold bg-gray-600  font-serif ">
           <tr>
             <th></th>
             <th>Name</th>
