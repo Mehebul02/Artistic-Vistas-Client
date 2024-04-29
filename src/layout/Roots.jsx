@@ -13,7 +13,7 @@ const Roots = () => {
      <div className="min-h-screen">
      <Outlet></Outlet>
      </div>
-    
+     
      <div className="mt-14">
      <Footer />
      </div>

@@ -7,6 +7,7 @@ import Card from "./Card";
 import Contact from "../../pages/Contact";
 import Testimonial from "../../pages/Testimonial";
 import { Helmet } from "react-helmet-async";
+import Subcategories from "../../pages/Subcategories";
 const Home = () => {
   const crafts = useLoaderData()
 const slice =crafts.slice(0,6)
@@ -33,6 +34,7 @@ const slice =crafts.slice(0,6)
         
       </div>
       <div className="max-w-[1320px] mx-auto">
+        <Subcategories/>
       <Testimonial/>
       </div>
    <div>

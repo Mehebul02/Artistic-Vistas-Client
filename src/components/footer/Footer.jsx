@@ -96,7 +96,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="py-6 text-sm text-center dark:text-white">Copyright © 2021, All Rights Reserved by Artistic Vistas</div>
+        <div className="py-6 text-sm text-center dark:text-white">Copyright © 2024, All Rights Reserved by Artistic Vistas</div>
     </footer>
     );
 };

@@ -62,7 +62,7 @@ const Navbar = () => {
         }
       >
         <li className="text-xl font-medium font-serif">
-          All Art & craft Items
+          All Art & craft
         </li>{" "}
       </NavLink>
       <NavLink
@@ -75,7 +75,7 @@ const Navbar = () => {
             : "hover:text-[#0076EA]"
         }
       >
-        <li className="text-xl font-medium font-serif">Add Craft Item</li>{" "}
+        <li className="text-xl font-medium font-serif">Add Craft </li>{" "}
       </NavLink>
       <NavLink
         to="/myCraft"
@@ -87,7 +87,7 @@ const Navbar = () => {
             : "hover:text-[#0076EA]"
         }
       >
-        <li className="text-xl font-medium font-serif">My Art&Craft List</li>{" "}
+        <li className="text-xl font-medium font-serif">My Art & Craft </li>{" "}
       </NavLink>
     </>
   );

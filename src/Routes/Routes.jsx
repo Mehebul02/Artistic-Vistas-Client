@@ -55,7 +55,12 @@ const router = createBrowserRouter([
         path:'/update/:id',
         element:<UpdatePage/>,
         loader:({params})=>fetch(`https://artistic-vistas-server.vercel.app/crafts/${params.id}`)
-      }
+      },
+      // {
+      //   path:'/subAll/:id',
+      //   element:<SubcategoryAll/>,
+      //   loader:({params})=>(`http://localhost:5000/subcategories/${params.id}`)
+      // }
     ],
   },
 ]);
