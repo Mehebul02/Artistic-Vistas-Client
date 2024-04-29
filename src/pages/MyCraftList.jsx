@@ -3,11 +3,13 @@ import useAuth from "../hooks/useAuth";
 import { useEffect, useState,} from "react";
 import MyCraft from "./MyCraft";
 import { IoIosArrowDown } from "react-icons/io";
+import { HashLoader } from "react-spinners";
 
 const MyCraftList = () => {
 
-  const { user } = useAuth() || {};
+  const { user,loading } = useAuth() || {};
   const [crafts,setCrafts] =useState([])
+ 
   useEffect(() => {
     fetch(`https://artistic-vistas-server.vercel.app/myCrafts/${user?.email}`)
       .then((res) => res.json())
@@ -16,7 +18,11 @@ const MyCraftList = () => {
         setCrafts(data)
       });
   }, [user]);
-
+  if(loading){
+    return <div className="flex justify-center items-center h-screen">
+      <HashLoader height={140} radius={9} width={40} color="#36d7b7" />
+    </div>
+  }
   return (
     <div className="max-w-[1300px] mx-auto text-center">
       <div className="dropdown dropdown-end ">

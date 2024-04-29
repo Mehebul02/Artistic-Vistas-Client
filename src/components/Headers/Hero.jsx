@@ -22,8 +22,9 @@ const Hero = () => {
   return (
     <div>
       <div>
+      {/* bg-[#c5b2f0] */}
         <Swiper
-          className="bg-[#c5b2f0] p-2 lg:p-0 "
+          className="bg-[#ffffff] p-2 lg:p-0 "
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
@@ -39,7 +40,7 @@ const Hero = () => {
          
           {/* 1st slide  */}
           <SwiperSlide>
-            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#c5b2f0] min-h-[30vh] rounded-lg">
+            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#ffffff] min-h-[30vh] rounded-lg">
               <div className="  space-y-10">
                 {/* <div className="w-10 </div> */}
                 <div className="flex md:flex items-center gap-4">
@@ -91,7 +92,7 @@ const Hero = () => {
           </SwiperSlide>
           {/* 2nd slide  */}
           <SwiperSlide>
-            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#c5b2f0] min-h-[30vh] rounded-lg">
+            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#ffffff] min-h-[30vh] rounded-lg">
               <div className="  space-y-10">
                 {/* <div className="w-10 </div> */}
                 <div className="flex md:flex items-center gap-4">
@@ -142,7 +143,7 @@ const Hero = () => {
           </SwiperSlide>
           {/* 3rd slide  */}
           <SwiperSlide>
-            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#c5b2f0] min-h-[30vh] rounded-lg">
+            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#ffffff] min-h-[30vh] rounded-lg">
               <div className="  space-y-10">
                 {/* <div className="w-10 </div> */}
                 <div className="flex md:flex items-center gap-4">
@@ -193,7 +194,7 @@ const Hero = () => {
           </SwiperSlide>
           {/* 4th slide  */}
           <SwiperSlide>
-            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#c5b2f0] min-h-[30vh] rounded-lg">
+            <div className="flex flex-col md:flex-row justify-between p-4 lg:p-28 bg-[#ffffff] min-h-[30vh] rounded-lg">
               <div className="  space-y-10">
                 {/* <div className="w-10 </div> */}
                 <div className="flex md:flex items-center gap-4">

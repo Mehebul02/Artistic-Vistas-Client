@@ -6,8 +6,9 @@ import useAuth from "../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { HashLoader } from "react-spinners";
 const Login = () => {
-  const { userSignIn, signInGoogle, githubLogin } = useAuth();
+  const { userSignIn, signInGoogle, githubLogin ,loading} = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,24 +23,14 @@ const Login = () => {
     // if (password) {
     //   return toast.error("Doesn’t match your password");
     // }
+    if(loading){
+      return <div className="flex justify-center items-center h-screen">
+        <HashLoader height={140} radius={9} width={40} color="#36d7b7" />
+      </div>
+    }
     userSignIn(email, password)
       .then((result) => {
         console.log(result.user);
-        // const user = {
-        //   email,
-        //   lastLoggetAt: result.user?.metadata?.lastSignInTime,
-        // };
-        // fetch("https://artistic-vistas-server.vercel.app/crafts", {
-        //   method: "PATCH",
-        //   headers:{
-        //     'Content-Type':'application/json'
-        //   },
-        //   body: JSON.stringify(user),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //   });
         Swal.fire({
           title: "Success",
           text: "Login Successfully",

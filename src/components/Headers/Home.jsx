@@ -4,6 +4,8 @@ import { RiStarFill } from "react-icons/ri";
 import { SiProcessingfoundation } from "react-icons/si";
 import { useLoaderData } from "react-router-dom";
 import Card from "./Card";
+import Contact from "../../pages/Contact";
+import Testimonial from "../../pages/Testimonial";
 const Home = () => {
   const crafts = useLoaderData()
 const slice =crafts.slice(0,6)
@@ -14,7 +16,7 @@ const slice =crafts.slice(0,6)
         <Hero></Hero>
       </div>
       <div className="text-center my-10 space-y-4 ">
-      <h1 className="text-4xl text-black font-serif font-semibold">Craft Items Section</h1>
+      <h1 className="text-4xl text-[#5454E2] font-serif font-semibold">Craft Items Section</h1>
       <p className="text-xl font-serif">From intricate hand-sewn textiles to beautifully sculpted ceramics, discover artisanal treasures <br />waiting to adorn your home or inspire your next project. Each item is a testament to craftsmanship and creativity.</p>
       <div className="divider"></div>
       </div>
@@ -26,7 +28,12 @@ const slice =crafts.slice(0,6)
         
         
       </div>
-      
+      <div className="max-w-[1320px] mx-auto">
+      <Testimonial/>
+      </div>
+   <div>
+   {/* <Contact/> */}
+   </div>
     </div>
   );
 };
