@@ -1,5 +1,6 @@
 // import React, { useEffect, useState } from "react";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const AllArtCraft = () => {
@@ -13,7 +14,12 @@ const AllArtCraft = () => {
       });
   }, []);
   return (
-    <div className="overflow-x-auto max-w-[1320px] mx-auto mt-10">
+   <div>
+    
+    <Helmet>
+        <title>Artistic Vistas | All Art & craft Items</title>
+      </Helmet>
+     <div className="overflow-x-auto max-w-[1320px] mx-auto mt-10">
       <table className="table border table-lg rounded-lg">
         <thead className="text-xl text-white font-semibold bg-gray-600  font-serif ">
           <tr>
@@ -47,6 +53,7 @@ const AllArtCraft = () => {
         </tbody>
       </table>
     </div>
+   </div>
   );
 };
 

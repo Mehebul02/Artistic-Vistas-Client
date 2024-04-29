@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { BiCustomize } from "react-icons/bi";
 import { RiStarFill } from "react-icons/ri";
 import { SiProcessingfoundation } from "react-icons/si";
@@ -7,7 +8,11 @@ const CraftDetails = () => {
 const craft = useLoaderData()
 const{_id,image,itemName,price,stockStatus,rating,processingTime,description,customization,subcategoryName,email} = craft
     return (
-        <div data-aos="flip-left" className="card lg:card-side p-4 max-w-[1100px] mx-auto mt-10  bg-base-100">
+       <div>
+        <Helmet>
+          <title>Artistic Vistas | Craft Details</title>
+        </Helmet>
+         <div data-aos="flip-left" className="card lg:card-side p-4 max-w-[1100px] mx-auto mt-10  bg-base-100">
         <figure ><img className="border  rounded-lg" src={image} alt=""/>
        
         </figure>
@@ -34,6 +39,7 @@ const{_id,image,itemName,price,stockStatus,rating,processingTime,description,cus
          
         </div>
       </div>
+       </div>
     );
 };
 

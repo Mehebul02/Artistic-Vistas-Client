@@ -7,6 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { HashLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
   const { userSignIn, signInGoogle, githubLogin ,loading} = useAuth();
   const [showPassword, setShowPassword] = useState(false);
@@ -65,7 +66,12 @@ const Login = () => {
       });
   };
   return (
-    <div className=" flex flex-col md:flex lg:flex-row p-2 lg:space-x-10 mt-10 max-w-[1300px] mx-auto">
+   <div>
+    <Helmet>
+        <title>Artistic Vistas | Login</title>
+      </Helmet>
+     <div className=" flex flex-col md:flex lg:flex-row p-2 lg:space-x-10 mt-10 max-w-[1300px] mx-auto">
+      
       <div
         className="w-full min-h-screen  bg-gray-400 hidden lg:block  bg-no-repeat  lg:w-1/2  rounded-l-lg "
         style={{
@@ -163,6 +169,7 @@ const Login = () => {
         </p>
       </div>
     </div>
+   </div>
   );
 };
 

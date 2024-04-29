@@ -1,6 +1,7 @@
 import { IoIosAddCircle } from "react-icons/io";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const AddCraftItem = () => {
   const {user} = useAuth()
@@ -56,8 +57,13 @@ const AddCraftItem = () => {
       });
 
   };
+
   return (
-    <div className=" max-w-[1320px] mx-auto bg-[#0E2332] p-10 shadow-lg rounded-lg border my-10">
+   <div>
+    <Helmet>
+      <title>Artistic Vistas|Add Craft</title>
+    </Helmet>
+     <div className=" max-w-[1320px] mx-auto bg-[#0E2332] p-10 shadow-lg rounded-lg border my-10">
       <div className="  text-center flex md:flex items-center gap-3"></div>
   
      <div className="flex md:flex justify-center  items-center gap-3">
@@ -216,42 +222,10 @@ const AddCraftItem = () => {
                 <option>Made to Order</option>
               </select>
             </label>
-            {/* user email input  */}
-
-            {/* <label className="form-control w-full ">
-              <div className="label">
-                <span className="label-text text-white text-xl font-serif font-semibold">
-                  Your Email
-                </span>
-              </div>
-              <input
-                type="email"
-                required
-                name="email"
-                placeholder="Email"
-                defaultValue={user.email}
-                className="input input-bordered  focus:outline-[#571f8e] w-full "
-              />
-            </label> */}
+           
           </div>
           <div className="flex flex-col lg:flex-row justify-center mt-4  items-center lg:gap-10 ">
-            {/* user name input  */}
-            {/* <label className="form-control w-full ">
-              <div className="label">
-                <span className="label-text text-white text-xl font-serif font-semibold">
-                  Your Name
-                </span>
-              </div>
-              <input
-                type="text"
-                required
-                name="name"
-                placeholder="Name
-                "
-                defaultValue={user.displayName}
-                className="input input-bordered  focus:outline-[#571f8e] w-full "
-              />
-            </label> */}
+            
             {/* Description input  */}
             <label className="form-control w-full ">
               <div className="label">
@@ -278,6 +252,7 @@ const AddCraftItem = () => {
         </form>
       </div>
     </div>
+   </div>
   );
 };
 

@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
   const { createUser,userSignOut,userUpdateProfile } = useAuth();
   const navigate = useNavigate();
@@ -45,125 +46,121 @@ const Register = () => {
       });
   };
   return (
-    <div className=" flex flex-col md:flex lg:flex-row space-x-10 mt-10 max-w-[1300px] mx-auto">
-      {/* <div
-        className=" max-w-[600px] min-h-screen  bg-gray-400 hidden lg:block  bg-no-repeat  lg:w-1/2  rounded-l-lg "
-        style={{
-          background: `url(${signUp})`,
-          backgroundSize: "100% 100%",
-          backgroundOrigin: "content-box",
-        }}
-      >
+    <div>
+      <Helmet>
+        <title>Artistic Vistas | Register</title>
+      </Helmet>
+      <div className=" flex flex-col md:flex lg:flex-row space-x-10 mt-10 max-w-[1300px] mx-auto">
     
-      </div> */}
-      <div>
-       <video 
-     src={signUp} autoPlay loop muted></video> 
-  
-        {/* <iframe className="w-full aspect-video ..." src={signUp}></iframe> */}
-      </div>
-      <div className="lg:w-full border p-6 rounded-lg shadow-lg">
-        <h1 className="text-3xl text-red-700 font-serif font-semibold ">
-         
-          <Typewriter  
-            words={[" Welcome To Artistic Vistas", ]}
-            loop={5}
-            cursor
-            cursorStyle='_'
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={1000}
-            
-          />
+    <div>
+     <video 
+   src={signUp} autoPlay loop muted></video> 
+
+      {/* <iframe className="w-full aspect-video ..." src={signUp}></iframe> */}
+    </div>
+    <div className="lg:w-full border p-6 rounded-lg shadow-lg">
+      <h1 className="text-3xl text-red-700 font-serif font-semibold ">
+       
+        <Typewriter  
+          words={[" Welcome To Artistic Vistas", ]}
+          loop={5}
+          cursor
+          cursorStyle='_'
+          typeSpeed={100}
+          deleteSpeed={50}
+          delaySpeed={1000}
+          
+        />
+      </h1>
+      <p className="font-medium ">Enter your details below</p>
+      <div className="divider">
+        <h1 className="text-center text-3xl font-serif text-[#06ABB2] font-semibold">
+          Register Now
         </h1>
-        <p className="font-medium ">Enter your details below</p>
-        <div className="divider">
-          <h1 className="text-center text-3xl font-serif text-[#06ABB2] font-semibold">
-            Register Now
-          </h1>
-        </div>
-        <div className="flex mt-2 gap-3"></div>
-
-        <form onSubmit={handleRegister}>
-          <label className="form-control w-full ">
-            <div className="label">
-              <span className="label-text text-xl font-serif font-semibold">
-                Name
-              </span>
-            </div>
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter Your Name"
-              required
-              className="input input-bordered w-full "
-            />
-          </label>
-          <label className="form-control w-full ">
-            <div className="label">
-              <span className="label-text text-xl font-serif font-semibold">
-                Email
-              </span>
-            </div>
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter Your Email"
-              className="input input-bordered w-full "
-              required
-            />
-          </label>
-          <label className="form-control w-full relative">
-            <div className="label">
-              <span className="label-text text-xl font-serif font-semibold">
-                Password
-              </span>
-            </div>
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Enter Your Password"
-              className="input input-bordered w-full "
-              required
-            />
-            <span
-              className=" absolute right-6 top-14"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? (
-                <FaEyeSlash className="text-xl"></FaEyeSlash>
-              ) : (
-                <FaEye className="text-xl"></FaEye>
-              )}
-            </span>
-          </label>
-          <label className="form-control w-full ">
-            <div className="label">
-              <span className="label-text text-xl font-serif font-semibold">
-                Image Url
-              </span>
-            </div>
-            <input
-              type="text"
-              name="image"
-              placeholder="Enter Your Image Url"
-              className="input input-bordered w-full "
-              required
-            />
-          </label>
-          <button className="bg-[#4F1B82] px-3 py-2 rounded-lg text-xl font-serif text-white font-semibold my-6">
-            Sign Up
-          </button>
-          <Toaster />
-        </form>
-
-        <p className="text-center text-xl font-serif my-2">
-          Already An Account ?{" "}
-          <Link className="btn-link" to="/login">
-            Login
-          </Link>
-        </p>
       </div>
+      <div className="flex mt-2 gap-3"></div>
+
+      <form onSubmit={handleRegister}>
+        <label className="form-control w-full ">
+          <div className="label">
+            <span className="label-text text-xl font-serif font-semibold">
+              Name
+            </span>
+          </div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            required
+            className="input input-bordered w-full "
+          />
+        </label>
+        <label className="form-control w-full ">
+          <div className="label">
+            <span className="label-text text-xl font-serif font-semibold">
+              Email
+            </span>
+          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            className="input input-bordered w-full "
+            required
+          />
+        </label>
+        <label className="form-control w-full relative">
+          <div className="label">
+            <span className="label-text text-xl font-serif font-semibold">
+              Password
+            </span>
+          </div>
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder="Enter Your Password"
+            className="input input-bordered w-full "
+            required
+          />
+          <span
+            className=" absolute right-6 top-14"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? (
+              <FaEyeSlash className="text-xl"></FaEyeSlash>
+            ) : (
+              <FaEye className="text-xl"></FaEye>
+            )}
+          </span>
+        </label>
+        <label className="form-control w-full ">
+          <div className="label">
+            <span className="label-text text-xl font-serif font-semibold">
+              Image Url
+            </span>
+          </div>
+          <input
+            type="text"
+            name="image"
+            placeholder="Enter Your Image Url"
+            className="input input-bordered w-full "
+            required
+          />
+        </label>
+        <button className="bg-[#4F1B82] px-3 py-2 rounded-lg text-xl font-serif text-white font-semibold my-6">
+          Sign Up
+        </button>
+        <Toaster />
+      </form>
+
+      <p className="text-center text-xl font-serif my-2">
+        Already An Account ?{" "}
+        <Link className="btn-link" to="/login">
+          Login
+        </Link>
+      </p>
+    </div>
+  </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { MdOutlineBrowserUpdated } from "react-icons/md";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
+import { Helmet, } from "react-helmet-async";
 
 const UpdatePage = () => {
   const loadedUpdate = useLoaderData();
@@ -76,7 +77,14 @@ const UpdatePage = () => {
       });
   };
   return (
-    <div className=" max-w-[1320px] mx-auto bg-[#0E2332] p-10 shadow-lg rounded-lg border my-10">
+   
+        
+   <div>
+    Add Craft Item
+    <Helmet>
+      <title>Artistic Vistas|Update</title>
+    </Helmet>
+     <div className=" max-w-[1320px] mx-auto bg-[#0E2332] p-10 shadow-lg rounded-lg border my-10">
       <div className="  text-center flex md:flex items-center gap-3"></div>
 
       <div className="flex md:flex justify-center  items-center gap-3">
@@ -271,6 +279,7 @@ const UpdatePage = () => {
         </form>
       </div>
     </div>
+   </div>
   );
 };
 

@@ -6,12 +6,16 @@ import { useLoaderData } from "react-router-dom";
 import Card from "./Card";
 import Contact from "../../pages/Contact";
 import Testimonial from "../../pages/Testimonial";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
   const crafts = useLoaderData()
 const slice =crafts.slice(0,6)
   console.log(crafts)
   return (
     <div >
+      <Helmet>
+        <title>Artistic Vistas | Home</title>
+      </Helmet>
       <div>
         <Hero></Hero>
       </div>

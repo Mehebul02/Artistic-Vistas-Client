@@ -4,6 +4,7 @@ import { useEffect, useState,} from "react";
 import MyCraft from "./MyCraft";
 import { IoIosArrowDown } from "react-icons/io";
 import { HashLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 
 const MyCraftList = () => {
 
@@ -24,7 +25,11 @@ const MyCraftList = () => {
     </div>
   }
   return (
-    <div className="max-w-[1300px] mx-auto text-center">
+   <div>
+    <Helmet>
+      <title>Artistic Vistas|My Craft</title>
+    </Helmet>
+     <div className="max-w-[1300px] mx-auto text-center">
       <div className="dropdown dropdown-end ">
   <div tabIndex={0} role="button" className="bg-green-700 px-6 m-1 flex items-center gap-3 text-white py-2 font-serif text-xl font-semibold mt-7 rounded-lg">Filter <IoIosArrowDown/></div>
   <ul tabIndex={0} className="dropdown-content  z-[1] menu p-2 text-xl font-medium font-serif shadow bg-base-200 rounded-box w-52">
@@ -41,6 +46,7 @@ const MyCraftList = () => {
         
       </div>
     </div>
+   </div>
   );
 };
 
